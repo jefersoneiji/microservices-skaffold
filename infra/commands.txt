@@ -1,0 +1,10 @@
+To access Dashboard run:
+  kubectl -n kubernetes-dashboard port-forward svc/kubernetes-dashboard-kong-proxy 8443:443
+
+NOTE: In case port-forward command does not work, make sure that kong service name is correct.
+    Check the services in Kubernetes Dashboard namespace using:
+      kubectl -n kubernetes-dashboard get svc
+
+After Secret is created, we can execute the following command to get the token which is saved in the Secret:
+
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d

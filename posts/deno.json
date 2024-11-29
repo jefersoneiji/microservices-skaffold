@@ -1,0 +1,26 @@
+{
+  "tasks": {
+    "dev": "deno run -A --watch src/routes.ts"
+  },
+  "lint": {
+    "include": [
+      "src/"
+    ],
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "include": [
+        "ban-untagged-todo"
+      ],
+      "exclude": [
+        "no-unused-vars"
+      ]
+    }
+  },
+  "imports": {
+    "@oak/oak": "jsr:@oak/oak@^16.1.0",
+    "@std/crypto": "jsr:@std/crypto@^1.0.2",
+    "@tajpouria/cors": "jsr:@tajpouria/cors@^1.2.1"
+  }
+}
